@@ -1,0 +1,34 @@
+eureka:
+  client:
+    serviceUrl:
+       defaultZone: http://tcloudyun:tcloudyun123456@111.230.45.63:8760/eureka
+    enabled: false
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.application.name}:${server.port}
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 10
+
+
+#web container
+server:
+  port: 8080
+#---
+#spring:
+#  profiles: peer1
+#
+#server:
+#  port: 8081
+#
+#---
+#spring:
+#   profiles: peer2
+#
+#server:
+#  port: 8082
+
+#spring:
+#    cloud:
+#       service-registry:
+#           auto-registration:
+#                enabled: false

@@ -2,7 +2,6 @@ eureka:
   client:
     serviceUrl:
        defaultZone: http://tcloudyun:tcloudyun123456@111.230.45.63:8760/eureka
-    enabled: false
   instance:
     preferIpAddress: true
     instance-id: ${spring.application.name}:${server.port}

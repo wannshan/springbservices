@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 文件功能：xxxx
- * Created by yufei on 2018/5/3.
+ *
  */
 @Component
 public class HystrixClientFallbackFactoryBookService implements FallbackFactory<BookService> {

@@ -1,6 +1,5 @@
 package wannshan.controller;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,10 +18,13 @@ public class BookApiFeign {
 //    @HystrixCommand(fallbackMethod = "bookListFial")
     @RequestMapping("/bookList")
     String bookList() {
-        return bookService.getStores();
+        return bookService.bookListRemote();
     }
-
-    public String bookListFial() {
-        return "fail bu feign get result";
+    @RequestMapping("/getBookById")
+    String getBookById() {
+        return bookService.getBookById();
     }
+//    public String bookListFial() {
+//        return "fail bu feign get result";
+//    }
 }

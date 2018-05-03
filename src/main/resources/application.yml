@@ -8,7 +8,9 @@ eureka:
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 10
 
-
+feign:
+   hystrix:
+          enabled: true
 #web container
 server:
   port: 8080

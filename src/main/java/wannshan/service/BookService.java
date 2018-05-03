@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * 文件功能：xxxx
  *
  */
-@FeignClient("http://book-service")
+@FeignClient(value = "http://book-service",fallbackFactory = HystrixClientFallbackFactoryBookService.class)
 public interface BookService {
     @RequestMapping(method = RequestMethod.GET,value = "/bookList")
-    String getStores();
+    String bookListRemote();
 
+    @RequestMapping(method = RequestMethod.GET,value = "/getBookById")
+    String getBookById();
 }
